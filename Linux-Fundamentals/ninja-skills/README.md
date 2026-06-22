@@ -13,15 +13,15 @@ The goal of this room was to locate specific files scattered across a Linux file
 Initially, syntax errors occurred due to spacing constraints around parentheses in the `find` command. 
 
 **Mistake:**
-\`\`\`bash
+```
 find / -type f \ (-name 8V2L ... \)
-\`\`\`
+```
 
 **Correction:**
 The `find` utility requires strict spacing so the shell passes the escaped characters accurately:
-\`\`\`bash
+```
 find / -type f \( -name 8V2L -o -name c4ZX \) 2>/dev/null
-\`\`\`
+```
 
 
 
@@ -29,9 +29,9 @@ find / -type f \( -name 8V2L -o -name c4ZX \) 2>/dev/null
 
 ### Task 2: Finding Content inside Files
 To locate an IP address hidden across multiple files, I combined `find` with an extended regular expression via `grep`:
-\`\`\`bash
+```
 -exec grep -E -H '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' {} \;
-\`\`\`
+```
 
 
 ![IP Address Search](./assets/ip_address.png)
