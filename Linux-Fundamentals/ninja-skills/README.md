@@ -22,6 +22,9 @@ The `find` utility requires strict spacing so the shell passes the escaped chara
 \`\`\`bash
 find / -type f \( -name 8V2L -o -name c4ZX \) 2>/dev/null
 \`\`\`
+
+
+
 ![Files Location Search](./assets/find_command.png)
 
 ### Task 2: Finding Content inside Files
@@ -29,6 +32,8 @@ To locate an IP address hidden across multiple files, I combined `find` with an 
 \`\`\`bash
 -exec grep -E -H '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' {} \;
 \`\`\`
+
+
 ![IP Address Search](./assets/ip_address.png)
 
 ## Key Takeaways
